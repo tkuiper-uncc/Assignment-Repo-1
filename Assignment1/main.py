@@ -46,7 +46,7 @@ class SandwichMachine:
     def check_resources(self, ingredients):
         """Returns True when order can be made, False if ingredients are insufficient."""
         for item in ingredients:
-            if ingredients[item] > self.machine_resources(item,0):
+            if ingredients[item] > self.machine_resources.get(item,0):
                 print(f"Sorry, low on {item}")
                 return False
         return True
@@ -83,7 +83,7 @@ class SandwichMachine:
            Hint: no output"""
         for item in order_ingredients:
             self.machine_resources[item] -= order_ingredients[item]
-            print(f"Here is your {sandwich_size} sandwich.")
+        print(f"Here is your {sandwich_size} sandwich.")
 
 
 ### Make an instance of SandwichMachine class and write the rest of the codes ###
